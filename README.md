@@ -1,18 +1,19 @@
 # GameEngines1-CA
 
 Game Engines 1 Assingment
+Cyberpunk formula racing
 
-# Cyberpunk formula racing
+# Description of the project
+
+Under the colorful neon lights, the players control the cool racing cars to follow the music in the city, the neon lights will change with the rhythm of music.
+
+# Student informations
 
 Name: Mingjun Gao
 
 Student Number: D16122910
 
 Class Group: DT228/Year4
-
-# Description of the project
-
-Under the colorful neon lights, the players control the cool racing cars to follow the music in the city, the neon lights will change with the rhythm of music.
 
 # Instructions for use
 
