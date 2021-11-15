@@ -1,4 +1,4 @@
-# GECA
+# GameEngines1-CA
 
 Game Engines 1 Assingment
 
