@@ -18,6 +18,22 @@ Class Group: DT228/Year4
 # Instructions for use
 
 Use the direction buttons to control the left and right movement, acceleration and braking of the racing car.
+In this game, you can manipulate a car you like to release on the track, and there will be many competitors on the track. Your goal is to surpass your competitors and get the first place. Enjoy the game while enjoying the gorgeous scenery.
+
+# Instructions for use
+Use the direction buttons to control the left and right movement, acceleration and braking of the racing car.
+
+# Parts that come from the course:
+-Add audio and color-changing background building
+
+-Enemy AI automatically finds its way.
+
+-Create racing model.
+
+# Most proud of：
+-Gorgeous neon city
+
+-Free operation of the car.
 
 # Project plan
 
