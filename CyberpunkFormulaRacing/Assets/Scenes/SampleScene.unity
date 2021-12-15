@@ -2519,7 +2519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24dc970cd19783d40ae419645dd1278d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
   turnSpeed: 5
   fallingSpeed: -10
 --- !u!1 &1732633073 stripped
