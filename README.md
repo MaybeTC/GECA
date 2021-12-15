@@ -17,11 +17,9 @@ Class Group: DT228/Year4
 
 # Instructions for use
 
-Use the direction buttons to control the left and right movement, acceleration and braking of the racing car.
-In this game, you can manipulate a car you like to release on the track, and there will be many competitors on the track. Your goal is to surpass your competitors and get the first place. Enjoy the game while enjoying the gorgeous scenery.
+Use the A/D buttons to control the left and right movement, W/S buttons to control acceleration and braking of the racing car. Use R buttons to Restart the game.
 
-# Instructions for use
-Use the direction buttons to control the left and right movement, acceleration and braking of the racing car.
+In this game, you can manipulate the car to release on the track, and there will be a competitors on the track. Your goal is to surpass your competitors and get the first place. Enjoy the game while enjoying the gorgeous builds.
 
 # Parts that come from the course:
 -Add audio and color-changing background building
@@ -35,14 +33,120 @@ Use the direction buttons to control the left and right movement, acceleration a
 
 -Free operation of the car.
 
-# Project plan
+# List of classes:
+| Class/asset | Source |
+|-----------|-----------|
+| Car.cs | Modified from https://docs.unity3d.com/ScriptReference/Input.GetAxis.html |
+| Enemy.cs | Self written |
+| Barrier.cs | Self written |
+| Neon.cs | Modified from https://docs.unity3d.com/ScriptReference/Material-color.html |
+| Win.cs | Self written |
 
-I plan to use random generation in the project to make the texture and color matching of the generated ground and buildings.
+# Car setting:
+![An image](images/car.png)
+```Java
+    //Setting speed
+    public float speed;
+    public float turnSpeed = 5;
+    public float fallingSpeed = -12;
+    // Start is called before the first frame update
+    void Start()
+    {
+        speed = 5;
+    }
 
-With regard to "Paint a picture in code", I will use the code to draw "neon lights" of buildings, which will change color with the rhythm of music.
+    // Update is called once per frame
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
+            Time.timeScale = 1;
+            return;
+        }
 
-I will create Component model of racing cars and buildings.
+        //Get left and right input of keyboard
+        float x = Input.GetAxis("Horizontal");
+        //Using Time.deltaTime to control the speed can be independent of the frame rate of the device.
+        transform.Translate(x * turnSpeed * Time.deltaTime, 0, speed * Time.deltaTime);
+        
+        //Press W key to accelerate
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            speed = 10;
+            return;
+        }
 
-And I will use unity3d modeling to create 3d models of racing cars and some background building models myself.
+        //Press S key to slow down.
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            speed = 2;
+            return;
+        }
+}
+```
+
+# Obstacle trigger
+![An image](images/obstacle.png)
+```java
+    private void OnTriggerEnter(Collider other)
+    {
+        //
+        if(other.name == "CarBodywork")
+        {
+            Debug.Log("Car is broken! Press R key to restart the game.");
+            Time.timeScale = 0;
+        }
+        
+    }
+```
+
+# Neon light:
+![An image](images/Build.png)
+```Java
+    Color colorOne = Color.red;
+    Color colorTwo = Color.blue;
+    float duration = 1.0f;
+    Renderer rend;
+    
+    void Start()
+    {
+        rend = GetComponent<Renderer> ();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        float lerp = Mathf.PingPong(Time.time, duration) / duration;
+        rend.material.color = Color.Lerp(colorOne, colorTwo, lerp);
+    }
+```
+
+#AI Navigation:
+![An image](images/enemy.png)
+```Java
+    public Transform goal;
+    public NavMeshAgent agent;
+
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        agent.destination = goal.position;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //
+        if(other.name == "CarBodywork")
+        {
+            Debug.Log("You lose!");
+            Time.timeScale = 0;
+        }
+        
+    }
+```
+
+# Demo video
+[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
 
 
