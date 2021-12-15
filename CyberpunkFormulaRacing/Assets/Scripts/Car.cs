@@ -12,7 +12,7 @@ public class Car : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 1;
+        speed = 5;
     }
 
     // Update is called once per frame
@@ -33,14 +33,14 @@ public class Car : MonoBehaviour
         //Press W key to accelerate
         if(Input.GetKeyDown(KeyCode.W))
         {
-            speed = 20;
+            speed = 10;
             return;
         }
 
         //Press S key to slow down.
         if(Input.GetKeyDown(KeyCode.S))
         {
-            speed = 5;
+            speed = 2;
             return;
         }
 
