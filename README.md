@@ -147,6 +147,6 @@ In this game, you can manipulate the car to release on the track, and there will
 ```
 
 # Demo video
-[![YouTube](http://img.youtu.be/-mUfmdMn7ds?hd=1/0.jpg)](http://youtu.be/-mUfmdMn7ds?hd=1)
+[![YouTube](http://img.youtu.be/-mUfmdMn7ds?hd=1/录音中 #12.jpg)](http://youtu.be/-mUfmdMn7ds?hd=1)
 
 
